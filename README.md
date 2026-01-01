@@ -12,7 +12,7 @@ Behavior-Driven Development (BDD) in Python and Django projects.
 - Enforce consistent test behavior across teams
 
 ## Installation
-# install from shell
+
 ```bash
 pip install git+https://github.com/kislayPS/bdd-selenium-helper.git
 

@@ -12,6 +12,7 @@ Behavior-Driven Development (BDD) in Python and Django projects.
 - Enforce consistent test behavior across teams
 
 ## Installation
+# install from shell
 ```bash
 pip install git+https://github.com/kislayPS/bdd-selenium-helper.git
 
@@ -27,10 +28,17 @@ from your_app.models imports AccountingVouchers
 
 @then(u'the user checks year and voucher serial in voucher number')
 def impl_step(context):
+  # store content of django form html element id "id_entry-voucher_number" in variable name voucher_number
   voucher_number = safe_fill_web_elements(context.browser, 'id_entry-voucher_number')
+
+  # get last accounting voucher from your app in django
   last_voucher = AccountingVouchers.objects.last()
-  should_be_next_voucher_number = int(last_voucher.voucher_number.split('/')[-1])+1
-  assert should_be_next_voucher_number in voucher_number, f"voucher# {voucher_number} doesn't contain {should_be_next_voucher_number}"
+
+  # store expected voucher serial number
+  expected_voucher_number = int(last_voucher.voucher_number.split('/')[-1])+1
+
+  # assert for `expected_voucher_number` in `voucher_number`
+  assert expected_voucher_number in voucher_number, f"voucher# {voucher_number} doesn't contain {expected_voucher_number}"
 
 
 # to uninstall

@@ -26,7 +26,7 @@ from your_app.models imports AccountingVouchers
 ....
 
 @then(u'the user checks year and voucher serial in voucher number')
-def impl_step():
+def impl_step(context):
   voucher_number = safe_fill_web_elements(context.browser, 'id_entry-voucher_number')
   last_voucher = AccountingVouchers.objects.last()
   should_be_next_voucher_number = int(last_voucher.voucher_number.split('/')[-1])+1

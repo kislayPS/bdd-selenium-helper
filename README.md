@@ -32,7 +32,7 @@ from your_app.models import AccountingVouchers
 @given(u'a business user logged in')
 def step_impl(context):
   # save email on context dict for further usage in the same step file
-  context.email = 'kislay.ps@gmail.com'
+  context.email = 'your.email@gmail.com'
 
   # clear and send `context.email` in form element id `id_login`
   safe_fill_web_elements(context.browser, 'id_login', context.email)

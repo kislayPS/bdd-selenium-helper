@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bdd-test-helpers"
+version = "0.1.0"
+description = "Reusable BDD helper functions for Python and Django projects"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "Kislay PS", email = "kislayp.sinha@gmail.com" }
+]
+dependencies = [
+  "pytest",
+  "pytest-django"
+]
+
+[project.urls]
+Homepage = "https://github.com/kislayPS/bdd-selenium-helper"

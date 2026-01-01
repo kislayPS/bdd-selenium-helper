@@ -16,6 +16,8 @@ Behavior-Driven Development (BDD) in Python and Django projects.
 ```bash
 pip install git+https://github.com/kislayPS/bdd-selenium-helper.git
 
+# to uninstall
+pip uninstall bdd-test-helpers
 
 # Usage in *_steps.py
 
@@ -41,5 +43,4 @@ def impl_step(context):
   assert expected_voucher_number in voucher_number, f"voucher# {voucher_number} doesn't contain {expected_voucher_number}"
 
 
-# to uninstall
-pip uninstall bdd-test-helpers
+

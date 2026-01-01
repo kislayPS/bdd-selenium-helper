@@ -31,3 +31,7 @@ def impl_step(context):
   last_voucher = AccountingVouchers.objects.last()
   should_be_next_voucher_number = int(last_voucher.voucher_number.split('/')[-1])+1
   assert should_be_next_voucher_number in voucher_number, f"voucher# {voucher_number} doesn't contain {should_be_next_voucher_number}"
+
+
+# to uninstall
+pip uninstall bdd-test-helpers

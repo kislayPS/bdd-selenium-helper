@@ -14,6 +14,8 @@ Behavior-Driven Development (BDD) in Python and Django projects.
 ## Installation
 
 ```bash
+pip install bdd-test-helpers
+or
 pip install git+https://github.com/kislayPS/bdd-selenium-helper.git
 
 # to uninstall
@@ -25,6 +27,19 @@ from behave_python.helper_func import safe_fill_web_elements
 from your_app.models import AccountingVouchers
 
 ....
+....
+
+@given(u'a business user logged in')
+def step_impl(context):
+  # save email on context dict for further usage in the same step file
+  context.email = 'kislay.ps@gmail.com'
+
+  # clear and send `context.email` in form element id `id_login`
+  safe_fill_web_elements(context.browser, 'id_login', context.email)
+
+  # submit button with `id_submit`
+  safe_fill_web_elements(context.browser, 'id_submit', click=True)
+
 ....
 ....
 
@@ -41,6 +56,8 @@ def impl_step(context):
 
   # assert for `expected_voucher_number` in `voucher_number`
   assert expected_voucher_number in voucher_number, f"voucher# {voucher_number} doesn't contain {expected_voucher_number}"
+
+
 
 
 

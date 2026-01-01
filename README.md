@@ -22,7 +22,7 @@ pip uninstall bdd-test-helpers
 # Usage in *_steps.py
 
 from behave_python.helper_func import safe_fill_web_elements
-from your_app.models imports AccountingVouchers
+from your_app.models import AccountingVouchers
 
 ....
 ....

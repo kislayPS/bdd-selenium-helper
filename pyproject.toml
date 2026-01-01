@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bdd-test-helpers"
-version = "latest"
+version = "0.1.0"
 description = "Reusable BDD helper functions for Python and Django projects"
 readme = "README.md"
 license = { text = "MIT" }
